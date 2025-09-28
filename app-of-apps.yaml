@@ -1,0 +1,28 @@
+# repo/apps/app-of-apps.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: log-provider-meta-app
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/extrain-benjamin/apps-of-apps-test.git
+    targetRevision: main
+    path: ./log-provider-app
+    directory:
+      recurse: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: log-provider
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false
+
