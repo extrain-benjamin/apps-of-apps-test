@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: log-provider
-          image: registry.localhost:5001/log-provider:1.0.0
+          image: k3d-registry.localhost:5001/log-provider:1.0.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
