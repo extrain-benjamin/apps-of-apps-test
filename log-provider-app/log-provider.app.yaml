@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/extrain-benjamin/apps-of-apps-test.git
     targetRevision: main
-    path: ./log-provider/
+    path: ./log-provider-app/log-provider
     directory:
       recurse: true
   syncPolicy:
