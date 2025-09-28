@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   source:
-    repoURL: git@github.com:extrain-benjamin/apps-of-apps-test.git
+    repoURL: https://github.com/extrain-benjamin/apps-of-apps-test.git
     targetRevision: main
     path: log-provider/
     directory:
